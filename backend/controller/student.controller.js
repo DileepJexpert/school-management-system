@@ -3,7 +3,7 @@ const Student = require('../models/student.model.js');
 // Create and Save a new Student
 exports.create = (req, res) => {
     
-    console.log("in side seevice ------"+req.body.firstName);
+    console.log("in side seevice ------"+req.body.dateOfBirth);
     // const student = new Student({
        
     //     title: req.body.title || "Untitled Note", 

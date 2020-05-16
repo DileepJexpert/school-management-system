@@ -4,6 +4,8 @@ import {Router} from "@angular/router";
 import {ApiService} from "../../../services/api.service";
 import { StudentsService } from '../student.service';
 import { Student } from '../student';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-button',
@@ -11,12 +13,16 @@ import { Student } from '../student';
   styleUrls: ['./button.component.scss']
 })
 export class ButtonComponent implements OnInit {
-
+  model;
   
   student: Student = new Student();
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder,private router: Router, private studentsService: StudentsService) { }
+  constructor(private formBuilder: FormBuilder,private router: Router,
+     private studentsService: StudentsService) {
+
+      this.student.dateOfBirth = new Date();
+      }
 
   addForm: FormGroup;
 

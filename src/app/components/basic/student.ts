@@ -6,6 +6,6 @@ export class Student {
     fatherName: string;
     motherName: string;
     address: string;
-    dateOfBirth: string;
+    dateOfBirth: Date;
     active: boolean;
 }

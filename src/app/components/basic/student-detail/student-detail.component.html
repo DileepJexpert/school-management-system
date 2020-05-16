@@ -1,20 +1,45 @@
-<h2>Employee Details</h2> 
+<h2>Student detail</h2> 
 
 <hr/>
 <div *ngIf="true">
   <div>
-    <label><b>First Name: </b></label> {{student.firstName}}
+    <label><b>First Name: </b></label> {{student.studentName}}
   </div>
   <div>
-    <label><b>Last Name: </b></label> {{student.lastName}}
+    <label><b>Last Name: </b></label> {{student.dateOfBirth}}
   </div>
   <div>
-    <label><b>Email Id: </b></label> {{student.emailId}}
-  </div>  
+    <label><b>Email Id: </b></label> {{student.fatherName}}
+  </div> 
+  <div>
+    <label><b>First Name: </b></label>{{student.motherName}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label>{{student.address}}
+  </div>
+  <div>
+    <label><b>DOB </b></label>{{student.dateOfBirth}}
+  </div> 
+  
+  <td>{{student.adharNumber}}</td>
+  <td>{{student.studentName}}</td>
+  <td>{{student.fatherName}}</td>
+  <td>{{student.motherName}}</td>
+  <td>{{student.fatherOccupation}}</td>
+  <td>{{student.motherOccupation}}</td>
+
+  <td>{{student.address}}</td>
+  <td>{{student.dateOfBirth}}</td>
+  <td>{{student.socialCategory}}</td>
+  <td>{{student.previousSchool}}</td>
+  <td>{{student.isPreviousTC}}</td>
+  <td>{{student.isDisabled}}</td>
+  <td>{{student.admissionGrade}}</td>
+  <td>{{student.admissionDate}}</td>
 </div>
 
 <br>
 <br>
-<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+<button (click)="list()" class="btn btn-primary">Back to List</button><br>
 
 

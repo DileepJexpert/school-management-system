@@ -1,4 +1,4 @@
-<h3>Register New Student</h3>
+<!-- <h3>Register New Student</h3>
 <div [hidden]="submitted" style="width: 400px;">
   <form (ngSubmit)="onSubmit()">
     <div class="form-group">
@@ -18,9 +18,210 @@
 
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
-</div>
+</div> -->
 
+
+
+<div class="container py-5">
+  <div class="row">
+      <div class="col-md-12">
+         
+          <!-- <ul class="nav nav-fill">
+              <a class="nav-item" href="#formLogin">Login</a>
+              <a class="nav-item" href="#formRegister">Sign-up</a>
+              <a class="nav-item" href="#formChangePassword">Password</a>
+              <a class="nav-item" href="#formResetPassword">Reset</a>
+              <a class="nav-item" href="#formPayment">Payment</a>
+              <a class="nav-item" href="#formUserEdit">User</a>
+              <a class="nav-item" href="#formContact">Contact</a>
+              <a class="nav-item" href="#formComplex">Complex</a>
+          </ul> -->
+          <!-- <hr class="mb-2"> -->
+          <h2 class="text-center mb-1">New Admission Forms</h2>
+          <div [hidden]="submitted">
+          <form (ngSubmit)="onSubmit()">
+          <div class="row">
+
+              <div class="col-md-10 offset-md-1">
+                  <span class="anchor" id="formComplex"></span>
+                  
+                  <!-- form complex example -->
+                  <div class="form-row mt-4">
+                      <div class="col-sm-5 pb-3">
+                          <label for="exampleAccount">Adhaar Number #</label>
+                          <input type="text" class="form-control" id="exampleAccount" [(ngModel)]="student.adharNumber" placeholder="name" name="adharNumber">
+                      </div>
+                      <div class="col-sm-3 pb-3">
+                          <label for="exampleCtrl">Name of Student</label>
+                          <input type="text" class="form-control" [(ngModel)]="student.studentName"  id="studentName" name="studentName">
+                      </div>
+                      <div class="col-sm-4 pb-3">
+                          <label for="exampleAmount">Father Name/ Gaurdian Name</label>
+                          <div class="input-group">
+                              <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                              <input type="text" class="form-control" [(ngModel)]="student.fatherName" 
+                              id="fatherName" placeholder="Amount" name="fatherName">
+                          </div>
+                      </div>
+                      <div class="col-sm-5 pb-3">
+                        <label for="exampleAccount">Father Occupation</label>
+                        <input type="text" class="form-control" [(ngModel)]="student.fatherOccupation" id="fatherOccupation"
+                         name="fatherOccupation" placeholder="XXXXXXXXXXXXXXXX">
+                    </div>
+                    <div class="col-sm-3 pb-3">
+                        <label for="exampleCtrl">Mother name</label>
+                        <input type="text" class="form-control" [(ngModel)]="student.motherName" 
+                        id="motherName" name="motherName" placeholder="0000">
+                    </div>
+                    <div class="col-sm-4 pb-3">
+                        <label for="exampleAmount">Mother Occupation</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"><span class="input-group-text">$</span></div>
+                            <input type="text" class="form-control" [(ngModel)]="student.motherOccupation" id="motherOccupation"
+                             name="motherOccupation" placeholder="Amount">
+                        </div>
+                    </div>
+                      <div class="col-sm-4 pb-3">
+                        <label for="exampleCity">Date of birth</label>
+                        <div class="input-group">
+                        <input type="date" class="form-control" placeholder="yyyy-mm-dd"
+                        name="dateOfBirth" [(ngModel)]="student.dateOfBirth"  (ngModelChange)="filterDateFrom = $event"
+                        ngbDatepicker #dgd="ngbDatepicker">
+          
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary calendar" (click)="dgd.toggle()" type="button"></button>
+                        </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-3 pb-3">
+                        <label for="exampleSt">Gender</label>
+                        <select class="form-control"[(ngModel)]="student.gender" id="gender" name="gender">
+                            <option>Pick a state</option>
+                        </select>
+                      </div>
+                      <div class="col-sm-3 pb-3">
+                        <label for="exampleSt">Religion</label>
+                        <select class="form-control" [(ngModel)]="student.religion" id="religion" name="religion">
+                            <option>Pick a state</option>
+                        </select>
+                    </div>
+                      <div class="col-sm-3 pb-3">
+                          <label for="exampleCity">Social Category</label>
+                          <input type="text" class="form-control" [(ngModel)]="student.socialCategory" 
+                          id="socialCategory" name="socialCategory" >
+                      </div>
+                    
+                      <div class="col-sm-3 pb-3">
+                          <label for="exampleZip">Mother Tongue</label>
+                          <input type="text" class="form-control" [(ngModel)]="student.motherTounge" 
+                          id="motherTounge" name="motherTounge">
+                      </div>
+                   
+                    <div class="col-sm-3 pb-3">
+                        <label for="exampleSt">Admission shought in class</label>
+                        <select class="form-control" [(ngModel)]="student.admissionGrade" id="admissionGrade" name="admissionGrade">
+                            <option>Pick a state</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-6 pb-3">
+                        <label for="exampleZip">Name of previous School</label>
+                        <input type="text" class="form-control"  [(ngModel)]="student.previousSchool" id="previousSchool"
+                         name="previousSchool">
+                    </div>
+                   
+                  <div class="col-sm-3 pb-3">
+                      <label for="exampleSt"> class studied in previous year</label>
+                      <select class="form-control" [(ngModel)]="student.previousClass" id="previousClass" name="previousClass">
+                          <option>Pick a state</option>
+                      </select>
+                  </div>
+                  <div class="col-sm-3 pb-3">
+                      <label for="exampleZip">Tc Recives</label>
+                      <select class="form-control" [(ngModel)]="student.isPreviousTC" id="isPreviousTC" name="isPreviousTC">
+                        <option>Pick a state</option>
+                    </select>
+                  </div>
+                 
+                  <div class="col-sm-4">
+                   
+                    <label for="exampleCity">Date of admission</label>
+                    <div class="input-group">
+                    <input class="form-control" placeholder="yyyy-mm-dd"
+                    name="dpg" [(ngModel)]="modell" ngbDatepicker #dg="ngbDatepicker">
+      
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="dg.toggle()" type="button"></button>
+                    </div>
+                    </div>
+                </div>
+                
+                      <div class="col-md-6 pb-3 ">
+                          <label for="exampleAccount">Wether belong to disadvantage group</label>
+                          <div class="form-group ">
+                              <div class="form-check form-check-inline">
+                                  <label class="form-check-label">
+                                      <input class="form-check-input" type="radio" name="isDisabled" [(ngModel)]="student.isDisabled"
+                                       id="isDisabled" value="option1"> yes
+                                  </label>
+                              </div>
+                             
+                              <div class="form-check form-check-inline">
+                                  <label class="form-check-label">
+                                      <input class="form-check-input" type="radio" [(ngModel)]="student.isDisabled" name="isDisabled" id="isDisabled" value="option6"> no
+                                  </label>
+                              </div>
+                          </div>
+                      </div>
+                      
+                      <div class="col-md-6 pb-3">
+                          <label for="exampleMessage">Address</label>
+                          <textarea class="form-control" [(ngModel)]="student.address" id="address" name="address"></textarea>
+                          <small class="text-info">
+                            Add the packaging note here.
+                          </small>
+                      </div>
+                      <!-- <div class="col-12">
+                          <div class="form-row">
+                               <label class="col-md col-form-label"  for="name">Generated Id</label>
+                               <input type="text" class="form-control col-md-4" name="gid" id="gid" />
+                               <label class="col-md col-form-label"  for="name">Date Assigned</label>
+                               <input type="text" class="form-control col-md-4" name="da" id="da" />
+                          </div>
+                        
+                        <div class="row">
+                          <div class='col-sm-4'>
+                        <div class="input-group">
+                          <input class="form-control" placeholder="yyyy-mm-dd"
+                                 name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                          <div class="input-group-append">
+                            <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+                          </div>
+                        </div>  </div>
+                      </div>
+                        <pre>Model: {{ model | json }}</pre>
+                      </div> -->
+                    
+                  </div>
+
+              </div>
+
+          </div>
+          <!--/row-->
+          <button type="submit" class="btn btn-success">Submit</button>
+</form>
 <div [hidden]="!submitted">
   <h4>You submitted successfully!</h4>
   <button class="btn btn-success" (click)="newEmployee()">Add</button> 
 </div>
+</div>
+     
+
+      </div>
+      <!--/col-->
+  </div>
+  <!--/row-->
+
+ 
+  
+</div>
+<!--/container-->
