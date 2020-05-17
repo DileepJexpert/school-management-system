@@ -25,6 +25,10 @@ const routes: Routes = [
       }, {
         path: 'fees',
         loadChildren: () => import('./components/fee/basic-elements/basic-elements.module').then(m => m.BasicElementsModule)
+      }, 
+      {
+        path: 'admin',
+        loadChildren: () => import('./components/admin/admin.module').then(m => m.AdminModule)
       }, {
         path: 'bootstrap-table',
         loadChildren: () => import('./components/tables/bootstrap-table/basic-bootstrap/basic-bootstrap.module').then(m => m.BasicBootstrapModule),

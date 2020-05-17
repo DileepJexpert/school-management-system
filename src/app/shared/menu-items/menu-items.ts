@@ -42,11 +42,36 @@ const MENUITEMS = [
     ],
   },
   {
+    label: 'Admin Configuration',
+    main: [
+      {
+        state: 'admin',
+        short_label: 'A',
+        name: 'Add Masters',
+        type: 'sub',
+        icon: 'ti-id-badge',
+        children: [
+          {
+            state: 'addFee',
+            type: 'link',
+            name: 'Add Fee'
+         
+          }, {
+            state: 'addClass',
+            type: 'link',
+            name: 'Add Class'
+         
+          }
+        ]
+      }
+    ]
+  },
+  {
     label: 'Student Management',
     main: [
       {
         state: 'basic',
-        name: 'Basic Components',
+        name: 'Student Mangement',
         type: 'sub',
         icon: 'ti-layout-grid2-alt',
         children: [
@@ -101,31 +126,7 @@ const MENUITEMS = [
       }
     ]
   },
-  {
-    label: 'Pages',
-    main: [
-      {
-        state: 'auth',
-        short_label: 'A',
-        name: 'Authentication',
-        type: 'sub',
-        icon: 'ti-id-badge',
-        children: [
-          {
-            state: 'login',
-            type: 'link',
-            name: 'Login',
-            target: true
-          }, {
-            state: 'registration',
-            type: 'link',
-            name: 'Registration',
-            target: true
-          }
-        ]
-      }
-    ]
-  },
+ 
   {
     label: 'Other',
     main: [

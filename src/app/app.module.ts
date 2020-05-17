@@ -17,6 +17,7 @@ import { CommonModule } from '@angular/common';
 import { ConfigureFeeComponent } from './components/fee/configure-fee/configure-fee.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,6 +26,7 @@ import { ConfigureFeeComponent } from './components/fee/configure-fee/configure-
     BreadcrumbsComponent,
     AuthComponent,
     ConfigureFeeComponent
+   
     
   ],
   imports: [
