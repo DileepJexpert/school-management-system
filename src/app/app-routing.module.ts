@@ -23,8 +23,8 @@ const routes: Routes = [
         path: 'notifications',
         loadChildren: () => import('./components/advance/notifications/notifications.module').then(m => m.NotificationsModule)
       }, {
-        path: 'forms',
-        loadChildren: () => import('./components/forms/basic-elements/basic-elements.module').then(m => m.BasicElementsModule)
+        path: 'fees',
+        loadChildren: () => import('./components/fee/basic-elements/basic-elements.module').then(m => m.BasicElementsModule)
       }, {
         path: 'bootstrap-table',
         loadChildren: () => import('./components/tables/bootstrap-table/basic-bootstrap/basic-bootstrap.module').then(m => m.BasicBootstrapModule),

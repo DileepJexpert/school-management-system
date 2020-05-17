@@ -14,6 +14,8 @@ import {ApiService} from "./services/api.service";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from '@angular/common';
+import { ConfigureFeeComponent } from './components/fee/configure-fee/configure-fee.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { CommonModule } from '@angular/common';
     AdminComponent,
     TitleComponent,
     BreadcrumbsComponent,
-    AuthComponent
+    AuthComponent,
+    ConfigureFeeComponent
+    
   ],
   imports: [
     CommonModule,

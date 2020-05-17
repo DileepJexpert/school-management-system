@@ -42,7 +42,7 @@ const MENUITEMS = [
     ],
   },
   {
-    label: 'UI Element',
+    label: 'Student Management',
     main: [
       {
         state: 'basic',
@@ -52,11 +52,11 @@ const MENUITEMS = [
         children: [
           {
             state: 'button',
-            name: 'Button'
+            name: 'Add Student'
           },
           {
             state: 'typography',
-            name: 'Typography'
+            name: 'Total Students'
           }
         ]
       },
@@ -69,11 +69,11 @@ const MENUITEMS = [
     ]
   },
   {
-    label: 'Forms',
+    label: 'Fee',
     main: [
       {
-        state: 'forms',
-        name: 'Form Components',
+        state: 'fees',
+        name: 'Fee Dtails',
         type: 'link',
         icon: 'ti-layers'
       }

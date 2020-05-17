@@ -10,28 +10,14 @@
           <th>Lastname</th>
           <th>Email</th>
           <th>Actions</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Email</th>
-          <th>Actions</th>
+          
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let student of students | async">
           <td>{{student.adharNumber}}</td>
           <td>{{student.studentName}}</td>
-          <td>{{student.fatherName}}</td>
-          <td>{{student.motherName}}</td>
-          <td>{{student.fatherOccupation}}</td>
-          <td>{{student.motherOccupation}}</td>
-
-          <td>{{student.address}}</td>
-          <td>{{student.dateOfBirth}}</td>
-          <td>{{student.socialCategory}}</td>
-          <td>{{student.previousSchool}}</td>
-          <td>{{student.isPreviousTC}}</td>
-          <td>{{student.isDisabled}}</td>
-          <td>{{student.admissionGrade}}</td>
+    
           <td>{{student.admissionDate}}</td>
 
           <td><button (click)="deleteEmployee(student.id)" class="btn btn-danger">Delete</button>

@@ -12,7 +12,7 @@ const app = express();
 mongoose.Promise = global.Promise;
 
 // Connecting to the database
-mongoose.connect('mongodb://localhost:27017/easy-notes', {
+mongoose.connect('mongodb+srv://dileep:uHulsGHlArDlByUc@student-db-ofmqy.mongodb.net/test?retryWrites=true&w=majority', {
 	useNewUrlParser: true
 }).then(() => {
     console.log("Successfully connected to the database");    

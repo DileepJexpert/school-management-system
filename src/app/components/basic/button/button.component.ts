@@ -30,6 +30,10 @@ export class ButtonComponent implements OnInit {
    
 
   }
+
+  dateChanged(date){ 
+    this.student.dateOfBirth=date;
+   }
   newEmployee(): void {
     this.submitted = false;
     this.student = new Student();
