@@ -13,20 +13,27 @@ import { AgGridAngular } from 'ag-grid-angular';
 export class TypographyComponent implements OnInit {
 
 
-  students: Observable<Student[]>;
-  
+  students: Array<Student>;
+  columnDefs=[
+    {headerName:'FirstName', field:'firstName', colId:'firstName', filter:'agTexxtFilter'}, 
+    {headerName:'LastName', field:'lastName', colId:'firstName', filter:'agTexxtFilter'} 
+  ];
 
-rowData: any;
+  public rowData: Student[] = [];
+
   constructor(private studentService: StudentsService, private http: HttpClient,
     private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
-    
   }
 
   reloadData() {
-    this.students = this.studentService.getStudentList();
+     this.studentService.getStudentList().subscribe((data) =>{
+      this.rowData = data;
+      this.students = data;
+    });
+
   }
 
   deleteEmployee(id: number) {

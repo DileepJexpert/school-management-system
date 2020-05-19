@@ -25,6 +25,10 @@ File: style.css
 /**  ===================== Custom css start
 ==========================  **/
 
+
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
 body {
   background-color: #f3f3f3;
   font-size: 0.875em;

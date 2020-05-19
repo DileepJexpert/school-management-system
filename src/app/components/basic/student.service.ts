@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Student } from './student';
 
 @Injectable({
   providedIn: 'root'
@@ -29,8 +30,8 @@ export class StudentsService {
     return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
   }
 
-  getStudentList(): Observable<any> {
+  getStudentList() {
       console.log("in side service angular-----------")
-    return this.http.get(`${this.baseUrl}`);
+    return this.http.get<Student[]>(`${this.baseUrl}`);
   }
 }

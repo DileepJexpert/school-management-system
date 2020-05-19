@@ -15,7 +15,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {ReactiveFormsModule} from "@angular/forms";
 import { CommonModule } from '@angular/common';
 import { ConfigureFeeComponent } from './components/fee/configure-fee/configure-fee.component';
-
+import { AgGridModule } from 'ag-grid-angular';
 
 
 @NgModule({
@@ -36,6 +36,7 @@ import { ConfigureFeeComponent } from './components/fee/configure-fee/configure-
     AppRoutingModule,
     SharedModule,
     ReactiveFormsModule,
+    AgGridModule.withComponents([]),
     HttpClientModule
   ],
   providers: [ApiService,
