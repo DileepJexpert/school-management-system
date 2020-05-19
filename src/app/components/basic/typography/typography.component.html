@@ -1,4 +1,4 @@
-<div class="panel panel-primary">
+<!-- <div class="panel panel-primary">
   <div class="panel-heading">
     <h2>Student List</h2>
   </div>
@@ -28,5 +28,66 @@
       </tbody>
     </table>
   </div>
-</div>
+</div> -->
+
+
+
+<form>
+  <div class="form-group form-inline">
+      Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="studentService.searchTerm"/>
+      <span class="ml-3" *ngIf="studentService.loading$ | async">Loading...</span>
+  </div>
+
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Adhaar No</th>
+      <th scope="col" sortable="name" (sort)="onSort($event)">Name</th>
+      <th scope="col" sortable="area" (sort)="onSort($event)"> father Name</th>
+      <th scope="col" sortable="population" (sort)="onSort($event)">date of birth</th>
+      <th scope="col" style="margin-left: 100px ">Action</th>
+     
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let student of students | async">
+      <th scope="row">{{student.adharNumber }}</th>
+     
+      <td><ngb-highlight [result]="student.studentName" [term]="studentService.searchTerm"></ngb-highlight></td>
+      <td ><ngb-highlight [result]="student.fatherName" [term]="studentService.searchTerm"></ngb-highlight></td>
+      <td><ngb-highlight [result]="student.dateOfBirth | date" [term]="studentService.searchTerm"></ngb-highlight></td>
+      <td><button (click)="deleteEmployee(student.id)" class="btn btn-danger  btn-sm"><i class="fa fa-trash-o"></i></button>
+      <button (click)="updateEmployee(student.id)" class="btn btn-info btn-sm" style="margin-left: 10px"><i class="fa fa-edit"></i>edit</button>
+      <button (click)="employeeDetails(student._id)" class="btn btn-success btn-sm" style="margin-left: 10px"><i class="fa fa-info-circle"></i>info</button>
+      <button (click)="employeeDetails(student._id)" class="btn btn-secondary btn-sm" style="margin-left: 10px"><i class="fa fa-info-circle"></i>TakeFee</button>
+      <button (click)="employeeDetails(student._id)" class="btn btn-warning btn-sm" style="margin-left: 10px"><i class="fa fa-info-circle"></i>Due</button>
+    </td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-between p-2">
+    <ngb-pagination
+      [collectionSize]="(total$ | async)!" [(page)]="studentService.page" [pageSize]="studentService.pageSize">
+    </ngb-pagination>
+
+    <select class="custom-select" style="width: auto" name="pageSize" [(ngModel)]="studentService.pageSize">
+      <option [ngValue]="2">2 items per page</option>
+      <option [ngValue]="4">4 items per page</option>
+      <option [ngValue]="6">6 items per page</option>
+    </select>
+  </div>
+
+</form>
+
+
+<ag-grid-angular
+    #agGrid
+    style="width: 500px; height: 500px;"
+    class="ag-theme-alpine"
+    [rowData]="rowData | async"
+    [columnDefs]="columnDefs"
+    rowSelection="multiple"
+    >
+</ag-grid-angular>
 

@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild  } from '@angular/core';
 import { Router } from '@angular/router';
 import { StudentsService } from '../student.service';
 import { Student } from '../student';
 import { Observable } from 'rxjs';
-
+import { HttpClient } from '@angular/common/http';
+import { AgGridAngular } from 'ag-grid-angular';
 @Component({
   selector: 'app-typography',
   templateUrl: './typography.component.html',
@@ -11,13 +12,17 @@ import { Observable } from 'rxjs';
 })
 export class TypographyComponent implements OnInit {
 
-  students: Observable<Student[]>;
 
-  constructor(private studentService: StudentsService,
+  students: Observable<Student[]>;
+  
+
+rowData: any;
+  constructor(private studentService: StudentsService, private http: HttpClient,
     private router: Router) {}
 
   ngOnInit() {
     this.reloadData();
+    
   }
 
   reloadData() {
