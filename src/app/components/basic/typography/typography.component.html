@@ -32,8 +32,8 @@
 
 
 
-<form>
-  <div class="form-group form-inline">
+
+  <!-- <div class="form-group form-inline">
       Full text search: <input class="form-control ml-2" type="text" name="searchTerm" [(ngModel)]="studentService.searchTerm"/>
       <span class="ml-3" *ngIf="studentService.loading$ | async">Loading...</span>
   </div>
@@ -76,19 +76,20 @@
       <option [ngValue]="4">4 items per page</option>
       <option [ngValue]="6">6 items per page</option>
     </select>
-  </div>
+  </div> -->
+              <div >
+                <ag-grid-angular
+                style="width: 5000px; height: 500px;"
+                class="ag-theme-alpine"
+                [rowData]="rowData"
+                [columnDefs]="columnDefs"
+               
+                >
+              </ag-grid-angular>
+              </div>
 
-</form>
 
 
-<div>
-  <ag-grid-angular
-  style="width: 500px; height: 500px;"
-  class="ag-theme-alpine"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
-  >
-</ag-grid-angular>
-</div>
+
 
 
