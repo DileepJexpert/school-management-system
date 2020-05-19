@@ -6,6 +6,7 @@ const postsRoutes = require("./routes/posts");
 const userRoutes = require("./routes/user");
 const noteRoutes = require('./routes/note.routes');
 const studentRoutes = require('./routes/student.routes');
+const feeRoutes = require('./routes/fee.routes');
 
 const app = express();
 
@@ -43,5 +44,6 @@ app.use("/api/posts", postsRoutes);
 app.use("/api/user", userRoutes);
 app.use("/api/notes", noteRoutes);
 app.use("/api/students", studentRoutes);
+app.use("/api/fees", feeRoutes);
 
 module.exports = app;

@@ -11,11 +11,12 @@
       <app-card [title]="'Basic Form Inputs'">
         <h4 class="sub-title">Basic Inputs</h4>
         <p>Add class of <code>.form-control</code> with <code>&lt;input&gt;</code> tag</p>
-        <form>
+        <form (ngSubmit)="onSubmit()">
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Select Class</label>
             <div class="col-sm-10">
-              <select name="select" class="form-control">
+              <select name="select" class="form-control"  [(ngModel)]="fee.class" id="class"
+              name="class">
                 <option value="opt1">Select Class</option>
                 <option value="opt2">Class 1</option>
                 <option value="opt2">Class 2</option>
@@ -31,32 +32,37 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Tution Fees</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control"  [(ngModel)]="fee.tutionFee" id="tutionFee"
+              name="tutionFee">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Conveyance Fee</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" placeholder="Type your title in Placeholder">
+              <input type="text" class="form-control"  [(ngModel)]="fee.conveyanceFee" id="conveyanceFee"
+              name="conveyanceFee">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Examination Fees</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control"  [(ngModel)]="fee.examinationFee" id="examinationFee"
+              name="examinationFee">
             </div>
           </div>
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Misclenous  Charge</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control">
+              <input type="text" class="form-control"  [(ngModel)]="fee.misclenousFee" id="misclenousFee"
+              name="misclenousFee">
             </div>
           </div>
        
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Educational Year </label>
             <div class="col-sm-10">
-              <select name="select" class="form-control">
+              <select name="select" class="form-control"  [(ngModel)]="fee.educationalYear" id="educationalYear"
+              name="educationalYear">
                 <option value="opt1">Select One Value Only</option>
                 <option value="opt2">2020-21</option>
                 <option value="opt3">2021-22</option>
@@ -69,8 +75,27 @@
           <div class="form-group row">
             <label class="col-sm-2 col-form-label">Textarea</label>
             <div class="col-sm-10">
-              <textarea rows="5" cols="5" class="form-control" placeholder="Default textarea"></textarea>
+              <textarea rows="5" cols="5" class="form-control"  [(ngModel)]="fee.comment" id="comment"
+              name="comment"></textarea>
             </div>
           </div>
+          <button type="submit" class="btn btn-success">Submit</button>
         </form>
+
+
+    
+
+
+<div>
+     
+        <tr *ngFor="let fee of fees | async">
+          <th scope="row">{{fee.class }}</th>
+          <th scope="row">{{fee.tutionFee }}</th>
+         
+        
+        </tr>
+   
+    
+        
+      </div>
         
